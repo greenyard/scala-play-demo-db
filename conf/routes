@@ -1,0 +1,35 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+
+# Home page
+GET   /              controllers.Application.index
+
+# Map static resources from the /public folder to the /assets URL path
+GET   /assets/*file  controllers.Assets.at(path="/public", file)
+
+
+
+##########################
+# Management of Items
+##########################
+GET   /item          controllers.Items.list
+GET   /item/new      controllers.Items.edit
+GET   /item/:id      controllers.Items.show(id: Long)
+POST  /item          controllers.Items.save
+
+
+##########################
+#Management of the account
+##########################
+GET   /user          controllers.Users.index		
+POST  /user          controllers.Users.save		
+
+
+##########################
+#Authorization process
+##########################
+GET   /auth          controllers.Authorization.index	
+POST  /auth          controllers.Authorization.authenticate	
+
